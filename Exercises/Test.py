@@ -9,7 +9,7 @@ img_url = 'https://storage.googleapis.com/sfr-vision-language-research/BLIP/demo
 raw_image = Image.open(requests.get(img_url, stream=True).raw).convert('RGB')
 
 # conditional image captioning
-text = "a photography o"
+text = "a photography of"
 inputs = processor(raw_image, text, return_tensors="pt").to("cuda")
 
 out = model.generate(**inputs)
